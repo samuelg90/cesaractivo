@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue & Yellow Fitness and Health</title>
+  <style>
+    :root {
+      --primary: #1976d2;   /* Blue */
+      --secondary: #ffe600; /* Yellow */
+      --bg: #f4f7fa;
+      --text: #222;
+      --accent: #ffc300;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(90deg, var(--primary) 80%, var(--secondary) 100%);
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav a {
+      color: var(--secondary);
+      background: var(--primary);
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 24px;
+      margin: 0 0.5em;
+      font-weight: 600;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    nav a:hover, nav a.active {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+    main {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 2em;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(25,118,210,0.07);
+    }
+    h1, h2 {
+      color: var(--primary);
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    .tips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+    .tip-card {
+      background: var(--secondary);
+      color: var(--primary);
+      border-radius: 10px;
+      flex: 1 1 220px;
+      padding: 1em;
+      box-shadow: 0 1px 4px rgba(25,118,210,0.10);
+      min-width: 180px;
+      max-width: 49%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
+    }
+    input, textarea, button {
+      padding: 0.6em 1em;
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      background: var(--primary);
+      color: var(--secondary);
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background: var(--primary);
+      color: var(--secondary);
+      margin-top: 2em;
+    }
+    @media (max-width: 600px) {
+      main { padding: 1em; }
+      .tips { flex-direction: column; }
+      .tip-card { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blue & Yellow Fitness and Health</h1>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#tips">Tips</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h2>Welcome!</h2>
+      <p>
+        Your journey to a healthier, fitter you starts here! Explore our tips, guides, and motivation to help you achieve your fitness and health goals.
+      </p>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        We are passionate about empowering individuals to live healthier lives. Our mission is to provide easy-to-follow advice, workouts, and nutrition guidance for all ages and fitness levels.
+      </p>
+    </section>
+    <section id="tips">
+      <h2>Fitness & Health Tips</h2>
+      <div class="tips">
+        <div class="tip-card">
+          <strong>Stay Hydrated</strong>
+          <p>Drink plenty of water throughout the day to keep your body functioning at its best.</p>
+        </div>
+        <div class="tip-card">
+          <strong>Balanced Diet</strong>
+          <p>Eat a variety of fruits, veggies, lean proteins, and whole grains to fuel your body.</p>
+        </div>
+        <div class="tip-card">
+          <strong>Move Regularly</strong>
+          <p>Aim for at least 30 minutes of physical activity most days of the week.</p>
+        </div>
+        <div class="tip-card">
+          <strong>Get Enough Sleep</strong>
+          <p>Quality sleep is essential for recovery and overall health. Aim for 7-9 hours per night.</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" required placeholder="Your name">
+        <label for="email">Email:</label>
+        <input id="email" type="email" name="email" required placeholder="your@email.com">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required placeholder="How can we help?"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Blue & Yellow Fitness and Health. Stay active, stay healthy!
+  </footer>
+  <script>
+    // Simple nav highlighting
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", function() {
+        document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
